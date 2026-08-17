@@ -16,12 +16,10 @@ Route::get('/blog', function () {
 });
 
 Route::get('/about2',[AdminController:: class, 'about2']) ->name("about2");;
-
 Route::get('/blog2', [AdminController:: class, 'blog2']) ->name("blog2");
-
 Route::get('/create', [AdminController::class, 'create'])->name("create");
-
 Route::post('/insert', [AdminController::class, 'insert'])->name("insert");
+
 Route::post('/create/insert', [AdminController::class, 'insert']);
 Route::get('/create/insert', function () {
     return redirect()->route('create');
@@ -36,3 +34,6 @@ Route::get('/test-db', function () {
     }
 });
 Route::get("/delete/{id}", [AdminController::class, "delete"]) ->name("delete");
+Route::get("/chang/{id}", [AdminController::class, "chang"]) ->name("chang");
+Route::get("/edit/{id}", [AdminController::class, "edit"]) ->name("edit");
+Route::post("/update/{id}", [AdminController::class, "update"]) ->name("update");
